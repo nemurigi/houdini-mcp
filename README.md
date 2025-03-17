@@ -70,7 +70,7 @@ create a **Shelf Tool** to toggle the server in Houdini:
        houdinimcp.start_server()
        hou.ui.displayMessage("Houdini MCP Server started on localhost:9876")
 
-```python
+```
 
 
 ### 1.3 Packages Integration 
@@ -87,7 +87,7 @@ If you want Houdini to auto-load your plugin at startup, create a package file n
     }
   ]
 }
-```json
+```
 
 ### 2.1 Using uv on Windows
 powershell
@@ -126,6 +126,6 @@ Add an entry:
     }
   }
 }
-```json
+```
 
 In Claude Desktop, Once the config file has been set on Claude, and the addon is running on Blender, you will see a hammer icon with tools for the Blender MCP
