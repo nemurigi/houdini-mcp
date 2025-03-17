@@ -30,7 +30,7 @@ Below are the complete instructions for setting up Houdini, uv, and Claude Deskt
 ## Requirements
 
 - **SideFX Houdini** 19.5 or newer  
-- **uv** (or a Python 3.8+ environment)  
+- **uv** 
 - **Claude Desktop** (latest version)
 
 ---
@@ -40,7 +40,7 @@ Below are the complete instructions for setting up Houdini, uv, and Claude Deskt
 ### 1.1 Folder Layout
 
 Create or confirm a folder in your Houdini scripts directory:
-C:/Users/<YourUserName>/Documents/houdini19.5/scripts/python/houdinimcp/
+C:/Users/YourUserName/Documents/houdini19.5/scripts/python/houdinimcp/
 
 Inside **`houdinimcp/`**, place:
 
@@ -55,8 +55,16 @@ Inside **`houdinimcp/`**, place:
 
 create a **Shelf Tool** to toggle the server in Houdini:
 
-1. **Right-click** a shelf → **"New Shelf..."**  
-2. **Right-click** again → **"New Tool..."**  
+1. **Right-click** a shelf → **"New Shelf..."** 
+
+Name it "MCP" or something similar
+
+
+
+2. **Right-click** again → **"New Tool..."** 
+Name: "Toggle MCP Server"
+Label: "MCP"
+
 3. Under **Script**, insert something like:
 
 ```python
@@ -75,7 +83,7 @@ create a **Shelf Tool** to toggle the server in Houdini:
 
 ### 1.3 Packages Integration 
 
-If you want Houdini to auto-load your plugin at startup, create a package file named houdinimcp.json in the Houdini packages folder (e.g. C:/Users/<YourUserName>/Documents/houdini19.5/packages/):
+If you want Houdini to auto-load your plugin at startup, create a package file named houdinimcp.json in the Houdini packages folder (e.g. C:/Users/YourUserName/Documents/houdini19.5/packages/):
 ```json
 {
   "path": "$HOME/houdini19.5/scripts/python/houdinimcp",
@@ -90,7 +98,7 @@ If you want Houdini to auto-load your plugin at startup, create a package file n
 ```
 
 ### 2.1 Using uv on Windows
-powershell
+```powershell
 
 # 1) Install uv 
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
@@ -104,12 +112,11 @@ uv add "mcp[cli]"
 
 # 4) Verify
 uv run python -c "import mcp.server.fastmcp; print('MCP is installed!')"
-
+```
 4. Telling Claude for Desktop to Use Your Script
+Go to File > Settings > Developer > Edit Config > 
 Open or create:
-
-
-%AppData%\Claude\claude_desktop_config.json
+claude_desktop_config.json
 
 Add an entry:
 
