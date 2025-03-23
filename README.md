@@ -136,4 +136,4 @@ Add an entry:
 }
 ```
 
-In Claude Desktop, Once the config file has been set on Claude, and the addon is running on Blender, you will see a hammer icon with tools for the Blender MCP
+In Claude Desktop, Once the config file has been set on Claude, and the addon is running on Houdini, you will see a hammer icon with tools for the Houdini MCP
