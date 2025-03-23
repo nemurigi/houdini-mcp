@@ -47,6 +47,7 @@ Inside **`houdinimcp/`**, place:
 - **`__init__.py`** – handles plugin initialization (start/stop server)  
 - **`server.py`** – defines the `HoudiniMCPServer` (listening on port `9876`)  
 - **`houdini_mcp_server.py`** – optional bridging script (some prefer a separate location)
+- **`pyproject.toml`**
 
 
 *(If you prefer, `houdini_mcp_server.py` can live elsewhere. As long as you know its path for running with `uv`.)*
