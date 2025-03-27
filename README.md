@@ -47,6 +47,7 @@ Inside **`houdinimcp/`**, place:
 - **`__init__.py`** – handles plugin initialization (start/stop server)  
 - **`server.py`** – defines the `HoudiniMCPServer` (listening on port `9876`)  
 - **`houdini_mcp_server.py`** – optional bridging script (some prefer a separate location)
+- **`pyproject.toml`**
 
 
 *(If you prefer, `houdini_mcp_server.py` can live elsewhere. As long as you know its path for running with `uv`.)*
@@ -139,8 +140,8 @@ if uv run was successful and claude failed to load mcp, make sure claude is usin
 ``` 
 to find python, and replace "python" with the path you got. 
 
-In Claude Desktop, Once the config file has been set on Claude, and the addon is running on Blender, you will see a hammer icon with tools for the Blender MCP.
 
 ### 4 Acknowledgement
 
 Houdini-MCP was built following [blender-mcp](https://github.com/ahujasid/blender-mcp). We thank them for the contribution.
+=======
