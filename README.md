@@ -144,4 +144,3 @@ to find python, and replace "python" with the path you got.
 ### 4 Acknowledgement
 
 Houdini-MCP was built following [blender-mcp](https://github.com/ahujasid/blender-mcp). We thank them for the contribution.
-=======
