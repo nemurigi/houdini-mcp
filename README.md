@@ -29,7 +29,7 @@ Below are the complete instructions for setting up Houdini, uv, and Claude Deskt
 
 ## Requirements
 
-- **SideFX Houdini** 19.5 or newer  
+- **SideFX Houdini**  
 - **uv** 
 - **Claude Desktop** (latest version)
 
@@ -39,7 +39,7 @@ Below are the complete instructions for setting up Houdini, uv, and Claude Deskt
 
 ### 1.1 Folder Layout
 
-Create or confirm a folder in your Houdini scripts directory:
+Create a folder in your Houdini scripts directory:
 C:/Users/YourUserName/Documents/houdini19.5/scripts/python/houdinimcp/
 
 Inside **`houdinimcp/`**, place:
@@ -97,23 +97,22 @@ If you want Houdini to auto-load your plugin at startup, create a package file n
 }
 ```
 
-### 2.1 Using uv on Windows
+### 2 Using uv on Windows
 ```powershell
+  # 1) Install uv 
+  powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 
-# 1) Install uv 
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+  # 2) add uv to your PATH (depends on the user instructions) from cmd
+  set Path=C:\Users\<YourUserName>\.local\bin;%Path%
 
-# 2) add uv to your PATH (depends on the user instructions) from cmd
-set Path=C:\Users\<YourUserName>\.local\bin;%Path%
+  # 3) In a uv project or the plugin directory
+  cd C:/Users/<YourUserName>/Documents/houdini19.5/scripts/python/houdinimcp/
+  uv add "mcp[cli]"
 
-# 3) In a uv project or the plugin directory
-cd C:/Users/<YourUserName>/Documents/houdini19.5/scripts/python/houdinimcp/
-uv add "mcp[cli]"
-
-# 4) Verify
-uv run python -c "import mcp.server.fastmcp; print('MCP is installed!')"
+  # 4) Verify
+  uv run python -c "import mcp.server.fastmcp; print('MCP is installed!')"
 ```
-4. Telling Claude for Desktop to Use Your Script
+### 3 Telling Claude for Desktop to Use Your Script
 Go to File > Settings > Developer > Edit Config > 
 Open or create:
 claude_desktop_config.json
@@ -134,5 +133,14 @@ Add an entry:
   }
 }
 ```
+if uv run was successful and claude failed to load mcp, make sure claude is using the same python version, use:
+```cmd
+  python -c "import sys; print(sys.executable)"
+``` 
+to find python, and replace "python" with the path you got. 
 
-In Claude Desktop, Once the config file has been set on Claude, and the addon is running on Blender, you will see a hammer icon with tools for the Blender MCP
+In Claude Desktop, Once the config file has been set on Claude, and the addon is running on Blender, you will see a hammer icon with tools for the Blender MCP.
+
+### 4 Acknowledgement
+
+Houdini-MCP was built following [blender-mcp](https://github.com/ahujasid/blender-mcp). We thank them for the contribution.
