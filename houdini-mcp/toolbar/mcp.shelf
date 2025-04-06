@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <tool name="houdini mcp" label="MCP" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[import hou
+import houdinimcp
+
+if hasattr(hou.session, "houdinimcp_server") and hou.session.houdinimcp_server:
+   houdinimcp.stop_server()
+   hou.ui.displayMessage("Houdini MCPãµã¼ãã¼ãåæ­¢ãã¾ãã")
+else:
+   houdinimcp.start_server()
+   hou.ui.displayMessage("Houdini MCPãµã¼ãã¼ãlocalhost:9876ã§éå§ãã¾ãã")]]></script>
+  </tool>
+</shelfDocument>
